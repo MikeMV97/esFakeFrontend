@@ -1,8 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GloabalStyles = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Proza+Libre:wght@400;500;700&display=swap');
-    
+
     body {
         margin: 0px;
         padding: 0px;
