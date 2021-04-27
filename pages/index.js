@@ -1,4 +1,11 @@
-const HomePage = () => <h1>Starting Project 🎉</h1>
+import { Navbar } from '../components/Navbar/Navbar'
+
+
+const HomePage = () => (
+    <>
+        <Navbar />
+    </>
+)
 
 export default HomePage
 
