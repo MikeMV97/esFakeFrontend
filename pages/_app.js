@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 
 const theme = {
-    red: "#eb1e1eff",
+    red: "#ab000d;",
     lightCoral: "#f26969ff",
     pastelPink: "#f7a1a1ff",
     white: "#ffffffff",

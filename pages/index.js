@@ -3,6 +3,8 @@ import { Hero } from '../components/HomeHero/Hero'
 import { ColumnWrapper } from '../styles/ColumnWrapper/ColumnWrapper'
 import { HomeBestSites } from '../components/HomeBestSites/HomeBestSites'
 import { HomeMetrics } from '../components/HomeMetrics/HomeMetrics'
+import { Footer } from '../components/Footer/Footer'
+
 
 
 
@@ -15,6 +17,7 @@ const HomePage = () => (
             <HomeBestSites />
             <HomeMetrics />
         </ColumnWrapper>
+        <Footer />
     </>
 )
 
