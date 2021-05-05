@@ -1,5 +1,5 @@
 import { Navbar } from '../components/Navbar/Navbar'
-import { Hero } from '../components/Hero/Hero'
+import { Hero } from '../components/HomeHero/Hero'
 import { ColumnWrapper } from '../styles/ColumnWrapper/ColumnWrapper'
 import { HomeBestSites } from '../components/HomeBestSites/HomeBestSites'
 
