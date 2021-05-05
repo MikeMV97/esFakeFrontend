@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
         <>
             <Head>
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Proza+Libre:wght@400;500;700&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Proza+Libre:wght@400;500;700&display=swap" rel="stylesheet" />
             </Head>
             <ThemeProvider theme={theme} >
                 <GloabalStyles />
