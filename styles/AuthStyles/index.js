@@ -26,3 +26,16 @@ export const AuthMessage = styled.div`
         margin-top: 3rem;
     }
 `;
+
+export const AuthWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 50% 1fr;
+`;
+
+export const FormWrapper = styled.div`
+  width: 100%;
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
