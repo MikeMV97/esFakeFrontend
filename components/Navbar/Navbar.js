@@ -1,14 +1,21 @@
 import { Nav } from "./styles";
 import { Button } from "../../styles/Button/Button";
 import Link from "next/link";
+import { Link as SoftLink } from "react-scroll";
 
 export const Navbar = () => (
   <Nav>
     <h3>EsFake</h3>
     <ul>
-      <li>Home</li>
-      <li>Los mejores calificados</li>
-      <li>Nuestras métricas</li>
+      <SoftLink to="hero" smooth={true} duration={500}>
+        <li>Home</li>
+      </SoftLink>
+      <SoftLink to="bestSites" smooth={true} duration={500}>
+        <li>Los mejores calificados</li>
+      </SoftLink>
+      <SoftLink to="metrics" smooth={true} duration={500}>
+        <li>Nuestras métricas</li>
+      </SoftLink>
     </ul>
     <Link href="/login">
       <a>

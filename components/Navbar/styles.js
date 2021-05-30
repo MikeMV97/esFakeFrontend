@@ -6,6 +6,9 @@ export const Nav = styled.nav`
   color: ${props => props.theme.white};
   align-items: center;
   padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0px;
+  z-index: 99999;
 
   h3 {
       font-size: 48px;
@@ -25,6 +28,10 @@ export const Nav = styled.nav`
 
   li {
       font-size: 18px;
+  }
+
+  li:hover {
+      cursor: pointer;
   }
 
   .login {
