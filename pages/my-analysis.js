@@ -38,34 +38,6 @@ const MyAnalysis = () => {
             title="Sector educativo podría ir a clases presenciales en octubre "
             name="El Universal"
           />
-          <NewsAnalysis
-            title="Sector educativo podría ir a clases presenciales en octubre "
-            name="El Universal"
-          />
-          <NewsAnalysis
-            title="Sector educativo podría ir a clases presenciales en octubre "
-            name="El Universal"
-          />
-          <NewsAnalysis
-            title="Sector educativo podría ir a clases presenciales en octubre "
-            name="El Universal"
-          />
-          <NewsAnalysis
-            title="Sector educativo podría ir a clases presenciales en octubre "
-            name="El Universal"
-          />
-          <NewsAnalysis
-            title="Sector educativo podría ir a clases presenciales en octubre "
-            name="El Universal"
-          />
-          <NewsAnalysis
-            title="Sector educativo podría ir a clases presenciales en octubre "
-            name="El Universal"
-          />
-          <NewsAnalysis
-            title="Sector educativo podría ir a clases presenciales en octubre "
-            name="El Universal"
-          />
         </NewsContainer>
       </main>
     </UserHomeContainer>

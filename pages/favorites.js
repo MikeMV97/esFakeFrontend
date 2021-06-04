@@ -1,6 +1,5 @@
 import { SideBarMenu } from "../components/SideBarMenu";
 import { UserHomeContainer } from "../styles/UserHomeContainer/UserHomeContainer";
-import { MetricName } from "../components/MetricName";
 import { NewsAnalysis } from "../components/NewsAnalysis";
 import {NewsContainer} from "../styles/NewsContainer/NewsContainer"
 
