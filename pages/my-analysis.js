@@ -1,6 +1,8 @@
 import { SideBarMenu } from "../components/SideBarMenu";
 import { UserHomeContainer } from "../styles/UserHomeContainer/UserHomeContainer";
 import { MetricName } from "../components/MetricName";
+import { NewsAnalysis } from "../components/NewsAnalysis";
+import {NewsContainer} from "../styles/NewsContainer/NewsContainer"
 
 const MyAnalysis = () => {
   return (
@@ -23,7 +25,48 @@ const MyAnalysis = () => {
           </ul>
         </div>
         <h2>Análisis recientes</h2>
-        <div>Componentes de noticias</div>
+        <NewsContainer>
+          <NewsAnalysis
+            title="Sector educativo podría ir a clases presenciales en octubre "
+            name="El Universal"
+          />
+          <NewsAnalysis
+            title="Sector educativo podría ir a clases presenciales en octubre "
+            name="El Universal"
+          />
+          <NewsAnalysis
+            title="Sector educativo podría ir a clases presenciales en octubre "
+            name="El Universal"
+          />
+          <NewsAnalysis
+            title="Sector educativo podría ir a clases presenciales en octubre "
+            name="El Universal"
+          />
+          <NewsAnalysis
+            title="Sector educativo podría ir a clases presenciales en octubre "
+            name="El Universal"
+          />
+          <NewsAnalysis
+            title="Sector educativo podría ir a clases presenciales en octubre "
+            name="El Universal"
+          />
+          <NewsAnalysis
+            title="Sector educativo podría ir a clases presenciales en octubre "
+            name="El Universal"
+          />
+          <NewsAnalysis
+            title="Sector educativo podría ir a clases presenciales en octubre "
+            name="El Universal"
+          />
+          <NewsAnalysis
+            title="Sector educativo podría ir a clases presenciales en octubre "
+            name="El Universal"
+          />
+          <NewsAnalysis
+            title="Sector educativo podría ir a clases presenciales en octubre "
+            name="El Universal"
+          />
+        </NewsContainer>
       </main>
     </UserHomeContainer>
   );
