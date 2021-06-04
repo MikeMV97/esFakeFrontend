@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const StyledSidebar = styled.aside`
+  position: sticky;
+  top: 0px;
   background: ${(props) => props.theme.lightCoral};
   max-width: calc(480px - 8rem);
-  min-height: 100vh;
+  height: 100vh;
   padding: 0px 4rem;
   box-shadow: 7px 0px 15px -1px rgba(106, 106, 106, 0.72);
 
