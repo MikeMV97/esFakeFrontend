@@ -1,7 +1,7 @@
 import { AuthMessage, AuthWrapper, FormWrapper } from "../styles/AuthStyles";
 import { SignupForm } from "../components/SignupForm";
 
-const Login = () => {
+const Signup = () => {
   return (
     <AuthWrapper>
       <AuthMessage>
@@ -20,4 +20,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
