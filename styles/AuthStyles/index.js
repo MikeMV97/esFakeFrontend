@@ -14,7 +14,7 @@ export const AuthMessage = styled.div`
 
     .message {
         font-family: 'Proza Libre', sans-serif;
-        font-size: 80px;
+        font-size: 72px;
         font-weight: bold;
         text-align: right;
     }

@@ -9,6 +9,11 @@ export const useForm = (formProperties) => {
             [event.target.name]: event.target.value
         })
     }
-    return { form, handleChange }
+
+    const cleanValues = () => {
+        setForm(formProperties)
+    }
+    
+    return { form, handleChange, cleanValues }
 }
 

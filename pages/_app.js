@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { ThemeProvider } from 'styled-components';
 import { GloabalStyles } from '../styles/global-styles';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import Head from 'next/head';
 
 
@@ -22,6 +24,7 @@ function MyApp({ Component, pageProps }) {
                 <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"></link>
                 <title>Es Fake</title>
             </Head>
+            <ToastContainer />
             <ThemeProvider theme={theme} >
                 <GloabalStyles />
                 <Component {...pageProps} />
