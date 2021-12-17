@@ -72,7 +72,7 @@ export const SignupForm = () => {
         onChange={handleChange}
         isRequired
       />
-      <input type="submit" className="submit" value="Iniciar sesión" />
+      <input type="submit" className="submit" value="Crear cuenta" />
     </StyledForm>
   );
 };
