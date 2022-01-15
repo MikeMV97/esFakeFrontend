@@ -1,27 +1,42 @@
-import { useRouter } from "next/router";
 import { StyledForm } from "./styles.js";
+import { useForm } from "../../hooks/useForm";
+import axios from "axios";
+import { useRouter } from "next/router";
+
 
 export const AnalysisForm = () => {
-  const router = useRouter();
+  const router = useRouter()
+  const { form, handleChange, cleanValues } = useForm({
+    title: '',
+    url: '',
+    articleText: ''
+  })
 
-  const handleSubmitToResults = (e) => {
+  const handleSubmitToResults = async (e) => {
     e.preventDefault();
-    router.push("/report");
+    const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_HOST}/api/analysis/predict`, {...form})
+    router.push({
+      pathname: '/report',
+      query: {
+        title: form.title,
+        id: data.id
+      }
+    })
   };
 
   return (
     <StyledForm action="submit" onSubmit={handleSubmitToResults}>
       <label htmlFor="title">
         <span>Título de la noticia</span>
-        <input className="text" type="text" id="title" />
+        <input className="text" name="title" type="text" id="title" onChange={handleChange} required/>
       </label>
-      <label htmlFor="link">
+      <label htmlFor="url">
         <span>Enlace de la noticia</span>
-        <input className="text" type="text" id="link" />
+        <input className="text" name="url" type="text" id="url" onChange={handleChange} required/>
       </label>
-      <label htmlFor="content">
+      <label htmlFor="articleText">
         <span>Cuerpo de la noticia</span>
-        <textarea name="content" id="content" />
+        <textarea name="articleText" id="articleText" onChange={handleChange} required/>
       </label>
       <input className="submit" type="submit" value="Analizar" />
     </StyledForm>
