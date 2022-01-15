@@ -7,7 +7,7 @@ export const InputText = ({ name, type, label, icon, placeholder, value, onChang
       <span>{label}</span>
       <StyledInput>
         {icon && <i className={icon} />}
-        <input disabled={disable} type={type} name={name} id={name} placeholder={placeholder} value={value} onChange={onChange} required={isRequired} autoComplete/>
+        <input disabled={disable} type={type} name={name} id={name} placeholder={placeholder} value={value} onChange={onChange} required={isRequired} autoComplete="true"/>
       </StyledInput>
     </InputContainer>
   )
