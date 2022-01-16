@@ -11,7 +11,7 @@ export const validatePassword = (password, passwordRepeat, cleanValues) => {
 
     if (!passRegex.test(password)) {
         cleanValues()
-        notifyError('Las contraseña debe contener al menos un digito, un caracter especial (!@#$%^&*) y 8 caracteres de longitud.')
+        notifyError('La contraseña debe contener al menos un digito, un caracter especial (!@#$%^&*) y 8 caracteres de longitud.')
         return false
     }
 

@@ -1,4 +1,5 @@
 import { ReportGridLayout } from "../components/ReportGridLayout";
+import { protectRoute } from "../utils/protectRoute";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -36,11 +37,12 @@ export async function getServerSideProps({ query }) {
 }
 
 const Report = (props) => {
+  protectRoute()
   return (
     <>
-          <ReportLayout>
-            <ReportGridLayout title={props.title} data={props.data}/>
-          </ReportLayout>
+      <ReportLayout>
+        <ReportGridLayout title={props.title} data={props.data} />
+      </ReportLayout>
     </>
   );
 };

@@ -7,6 +7,7 @@ import { Button } from "../../styles/Button/Button";
 import { useForm } from "../../hooks/useForm";
 import { validatePassword } from "../../utils/validatePassword";
 import { UploadContainer } from "../../styles/UploadContainer/UploadContainer";
+import { createCookie } from "../../utils/cookies";
 import axios from "axios";
 
 
@@ -22,7 +23,6 @@ export const SignupForm = () => {
   const handleChangeImage = (event) => {
     const [file] = event.target.files
     if (file) {
-      console.log(file)
       const fileURL = URL.createObjectURL(file)
       setImage({ file, src: fileURL })
     } else {
@@ -48,26 +48,26 @@ export const SignupForm = () => {
       };
 
       const { data: user } = await axios.post(urlSignUp, formData, config)
-      console.log(user)
       if (user) {
-        const token = encodeURI(process.env.NEXT_PUBLIC_API_KEY)
-        console.log("El token es: ", token)
+        const apiKeyToken = encodeURI(process.env.NEXT_PUBLIC_API_KEY)
         const { data } = await axios({
           url: urlSignIn,
           method: 'POST',
           data: {
-            apiKeyToken: token
+            apiKeyToken
           },
           auth: {
             username: email,
             password
           }
         })
-        console.log(data)
+        const { token, user } = data
+        createCookie('token', token)
+        createCookie('user', user)
       }
 
     } catch (err) {
-      console.log(err)
+      console.error(err.message)
     }
   }
 
@@ -120,6 +120,7 @@ export const SignupForm = () => {
         onChange={handleChange}
         isRequired
       />
+      <p style={{ width: 300, margin: "0.5rem 0px" }}>La contraseña debe contener al menos un digito, un caracter especial (!@#$%^&*) y 8 caracteres de longitud.</p>
       <InputText
         name="passwordRepeat"
         type="password"

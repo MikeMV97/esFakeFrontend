@@ -3,6 +3,7 @@ import { UserHomeContainer } from "../styles/UserHomeContainer/UserHomeContainer
 import { MetricName } from "../components/MetricName";
 import { NewsAnalysis } from "../components/NewsAnalysis";
 import {NewsContainer} from "../styles/NewsContainer/NewsContainer"
+import { protectRoute } from "../utils/protectRoute";
 import styled from 'styled-components';
 
 const RecurrentSites = styled.div`
@@ -19,6 +20,7 @@ const RecurrentSites = styled.div`
 
 
 const MyAnalysis = () => {
+  protectRoute()
   return (
     <UserHomeContainer>
       <SideBarMenu />
