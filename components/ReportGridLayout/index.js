@@ -2,28 +2,16 @@ import {
   StyledReportGrid,
   TitleContainer,
   IlustrationContainer,
-  GraphContainer,
+  InfoContainer,
   ButtonContainer,
 } from "./styles";
 
 import { Button } from "../../styles/Button/Button";
-import { PlotContainer } from "../PlotContainer";
+import Link from "next/link";
+import { FavoriteButton } from "../FavoriteButton";
 
-export const ReportGridLayout = () => {
-  
-  const mockedFeatures = [{
-    name: 'Exactitud',
-    value: 100,
-  },
-  {
-    name: 'Libertad',
-    value: 40,
-  },
-  {
-    name: 'Presicion',
-    value: 80,
-  }]
 
+export const ReportGridLayout = (props) => {
   return (
     <StyledReportGrid>
       <TitleContainer>
@@ -32,15 +20,37 @@ export const ReportGridLayout = () => {
       <IlustrationContainer>
         <img src="/results.png" alt="Dibujo de mujer con un reporte" />
       </IlustrationContainer>
-      <GraphContainer>
-        <h2>[Título de la noticia]</h2>
-        <p>
-          <b>[enlace de la noticia]</b>
-        </p>
-        <PlotContainer features={mockedFeatures} />
-      </GraphContainer>
+      <InfoContainer>
+        <FavoriteButton id={props.data.id} item={props.data} />
+        <h2>De tu noticia <b>&quot;{props.title}&quot;</b> obtuvimos:</h2>
+        <ul>
+          <li>
+            Longitud promedio de letras por palabra: {" "}
+            <b>{Math.floor(props.data.avgWordLen)}</b>
+          </li>
+          <li>
+            Número de palabras usadas: {" "}
+            <b>{props.data.numWords}</b>
+          </li>
+          <li>
+            Número de palabras diferentes: {" "}
+            <b>{props.data.numDiffWords}</b>
+          </li>
+          <li>
+            Número de palabras con alta información semántica: {" "}
+            <b>{props.data.numStopwords}</b>
+          </li>
+        </ul>
+        <h3>Dada esta información tu noticia se considera posiblemente* {" "}
+          <b>{props.data.predictionResult ? "verdadera ✅" : "falsa ❌"}</b>
+        </h3>
+
+        <p>*Recuerda que estos resultados tienen aproximadamente un 81% de confiabilidad.</p>
+      </InfoContainer>
       <ButtonContainer>
-        <Button secondary>Regresar</Button>
+        <Link href="/analysis">
+          <Button secondary>Regresar</Button>
+        </Link>
       </ButtonContainer>
     </StyledReportGrid>
   );

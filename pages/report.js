@@ -24,7 +24,7 @@ export async function getServerSideProps({ query }) {
       console.log("Entra acá")
       return { props: { error: data.error } }
     }
-    return { props: { data } }
+    return { props: { data, title } }
   } catch (error) {
     console.error(error)
     return {
@@ -41,7 +41,7 @@ const Report = (props) => {
   return (
     <>
           <ReportLayout>
-            <ReportGridLayout />
+            <ReportGridLayout title={props.title} data={props.data}/>
           </ReportLayout>
     </>
   );
