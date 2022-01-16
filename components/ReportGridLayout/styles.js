@@ -33,9 +33,29 @@ export const IlustrationContainer = styled.div`
   }
 `;
 
-export const GraphContainer = styled.div`
+export const InfoContainer = styled.div`
   grid-area: graph;
-  
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+
+  .favorite-button{ 
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  h2,h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 1.2rem;
+  }
+
+  li {
+    font-size: 1.2rem;
+  }
+
+  b {
+    font-weight: 900;
+    font-size: 1.3rem;
+  }
 `;
 
 export const ButtonContainer = styled.div`
