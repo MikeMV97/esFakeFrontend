@@ -4,11 +4,12 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { LoadingComponent } from "../LoadingComponent/index.js";
+import { readCookie } from "../../utils/cookies.js";
 
 
 export const AnalysisForm = () => {
   const router = useRouter()
-  const { form, handleChange, cleanValues } = useForm({
+  const { form, handleChange } = useForm({
     title: '',
     url: '',
     articleText: ''
@@ -18,7 +19,8 @@ export const AnalysisForm = () => {
   const handleSubmitToResults = async (e) => {
     e.preventDefault();
     setLoading(true)
-    const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_HOST}/api/analysis/predict`, { ...form })
+    const { email } = readCookie('user')
+    const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_HOST}/api/analysis/predict`, { ...form, email })
     setLoading(false)
     router.push({
       pathname: '/report',
@@ -29,7 +31,7 @@ export const AnalysisForm = () => {
     })
   };
 
-  if (loading) return <LoadingComponent message="En unos segundos tendremos tus resultados listos"/>
+  if (loading) return <LoadingComponent message="En unos segundos tendremos tus resultados listos" />
 
   return (
     <StyledForm action="submit" onSubmit={handleSubmitToResults}>
