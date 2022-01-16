@@ -21,7 +21,6 @@ export async function getServerSideProps({ query }) {
       }
     })
     if (data.error) {
-      console.log("Entra acá")
       return { props: { error: data.error } }
     }
     return { props: { data, title } }
@@ -37,7 +36,6 @@ export async function getServerSideProps({ query }) {
 }
 
 const Report = (props) => {
-  console.log(props)
   return (
     <>
           <ReportLayout>

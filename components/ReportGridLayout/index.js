@@ -21,7 +21,7 @@ export const ReportGridLayout = (props) => {
         <img src="/results.png" alt="Dibujo de mujer con un reporte" />
       </IlustrationContainer>
       <InfoContainer>
-        <FavoriteButton id={props.data.id} item={props.data} />
+        <FavoriteButton id={props.data.id} item={{ title: props.title, ...props.data }} />
         <h2>De tu noticia <b>&quot;{props.title}&quot;</b> obtuvimos:</h2>
         <ul>
           <li>
