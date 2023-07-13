@@ -20,7 +20,12 @@ export const AnalysisForm = () => {
     e.preventDefault();
     setLoading(true)
     const { email } = readCookie('user')
-    const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_HOST}/api/analysis/predict`, { ...form, email })
+    const token = readCookie('token');
+    console.log({ token });
+    const headers = {
+      Authorization: `Bearer ${token}`
+    };
+    const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_HOST}/api/analysis/predict`, { ...form, email }, { headers })
     setLoading(false)
     router.push({
       pathname: '/report',

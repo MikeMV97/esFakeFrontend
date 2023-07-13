@@ -3,7 +3,7 @@ import { UserHomeContainer } from "../styles/UserHomeContainer/UserHomeContainer
 import { AnalysisForm } from "../components/AnalysisForm";
 import { protectRoute } from "../utils/protectRoute";
 
-const Analysys = () => {
+const Analysis = () => {
   protectRoute()
   return (
     <UserHomeContainer>
@@ -15,4 +15,4 @@ const Analysys = () => {
   );
 };
 
-export default Analysys;
+export default Analysis;

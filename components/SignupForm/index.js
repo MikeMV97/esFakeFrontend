@@ -5,14 +5,16 @@ import { ProfileAvatar } from "../../styles/ProfileAvatar/ProfileAvatar";
 import { InputFile } from "../InputFile";
 import { Button } from "../../styles/Button/Button";
 import { useForm } from "../../hooks/useForm";
+import { useRouter } from "next/router";
 import { validatePassword } from "../../utils/validatePassword";
 import { UploadContainer } from "../../styles/UploadContainer/UploadContainer";
 import { createCookie } from "../../utils/cookies";
 import axios from "axios";
 
 
-export const SignupForm = () => {
 
+export const SignupForm = () => {
+  const router = useRouter();
   const INITIAL_IMAGE_STATE = { src: null, file: null }
 
   const [image, setImage] = useState(INITIAL_IMAGE_STATE)
@@ -48,9 +50,12 @@ export const SignupForm = () => {
       };
 
       const { data: user } = await axios.post(urlSignUp, formData, config)
+        .then((response) => response)
+        .catch((err) => console.log(err));
       if (user) {
+        console.log({ user });
         const apiKeyToken = encodeURI(process.env.NEXT_PUBLIC_API_KEY)
-        const { data } = await axios({
+        const { data: loggedUser } = await axios({
           url: urlSignIn,
           method: 'POST',
           data: {
@@ -60,10 +65,14 @@ export const SignupForm = () => {
             username: email,
             password
           }
-        })
-        const { token, user } = data
+        });
+        console.log({ loggedUser });
+        const { token, user } = loggedUser;
         createCookie('token', token)
-        createCookie('user', user)
+        createCookie('user', user);
+        router.push({
+          pathname: '/analysis'
+        });
       }
 
     } catch (err) {
@@ -96,7 +105,7 @@ export const SignupForm = () => {
         type="text"
         label="Nombre"
         icon="las la-user-circle"
-        placeholder="Diana"
+        placeholder="Shazam"
         value={form.name}
         onChange={handleChange}
         isRequired
@@ -106,7 +115,7 @@ export const SignupForm = () => {
         type="email"
         label="Correo electrónico"
         icon="las la-envelope"
-        placeholder="youremail@awesome.com"
+        placeholder="email@awesome.com"
         value={form.email}
         onChange={handleChange}
         isRequired

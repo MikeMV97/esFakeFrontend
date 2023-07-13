@@ -43,7 +43,7 @@ export const ReportGridLayout = (props) => {
         </ul>
         <h3>Dada esta información tu noticia se considera posiblemente* {" "}
           <br />
-          <b>{props.data.predictionResult ? "verdadera ✅" : "falsa ❌"}</b>
+          <b>{!props.data.predictionResult ? "verdadera ✅" : "falsa ❌"}</b>
         </h3>
 
         <p>*Recuerda que estos resultados tienen aproximadamente un 81% de confiabilidad.</p>

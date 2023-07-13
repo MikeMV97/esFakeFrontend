@@ -8,14 +8,17 @@ export const Navbar = () => (
     <h3>EsFake</h3>
     <ul>
       <SoftLink to="hero" smooth={true} duration={500}>
-        <li>Home</li>
+        <li>Inicio</li>
       </SoftLink>
-      <SoftLink to="bestSites" smooth={true} duration={500}>
+      {/* <SoftLink to="bestSites" smooth={true} duration={500}>
         <li>Los mejores calificados</li>
       </SoftLink>
       <SoftLink to="metrics" smooth={true} duration={500}>
         <li>Nuestras métricas</li>
-      </SoftLink>
+      </SoftLink> */}
+      <Link href="/analysis">
+        <li>Analizar noticia</li>
+      </Link>
     </ul>
     <Link href="/login">
       <a>
