@@ -10,7 +10,7 @@ import { Button } from "../../styles/Button/Button";
 import Link from "next/link";
 import { FavoriteButton } from "../FavoriteButton";
 
-
+/* eslint-disable react/prop-types */
 export const ReportGridLayout = (props) => {
   return (
     <StyledReportGrid>
@@ -56,3 +56,4 @@ export const ReportGridLayout = (props) => {
     </StyledReportGrid>
   );
 };
+/* eslint-enable react/prop-types */

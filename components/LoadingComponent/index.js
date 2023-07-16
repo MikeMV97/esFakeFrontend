@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled, { keyframes } from 'styled-components';
 
 const FlexContainer = styled.div`
@@ -55,10 +56,14 @@ const LoaderContainer = styled.div`
 
 
 export const LoadingComponent = ({ message }) => {
-    return (
-        <FlexContainer>
-            <p>{message}</p>
-            <LoaderContainer><div></div><div></div><div></div><div></div></LoaderContainer>
-        </FlexContainer>
-    )
+	return (
+		<FlexContainer>
+			<p>{message}</p>
+			<LoaderContainer><div></div><div></div><div></div><div></div></LoaderContainer>
+		</FlexContainer>
+	)
 }
+
+LoadingComponent.propTypes = {
+	message: PropTypes.string.isRequired
+};

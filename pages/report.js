@@ -1,5 +1,6 @@
 import { ReportGridLayout } from "../components/ReportGridLayout";
 import { protectRoute } from "../utils/protectRoute";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -48,3 +49,8 @@ const Report = (props) => {
 };
 
 export default Report;
+
+Report.propTypes = {
+  title: PropTypes.string,
+  data: PropTypes.object,
+};

@@ -25,4 +25,5 @@ export const NewsAnalysis = ({ title, id }) => {
 
 NewsAnalysis.propTypes = {
   title: PropTypes.string.isRequired,
+  id: PropTypes.string
 };
