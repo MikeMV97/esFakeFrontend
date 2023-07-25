@@ -35,7 +35,7 @@ export const SignupForm = () => {
   const signUpUser = async (name, email, password, image) => {
     try {
       //${process.env.NEXT_PUBLIC_BACKEND_HOST}
-      const urlSignUp = `es-fake-api.azurewebsites.net/api/auth/sign-up`
+      const urlSignUp = `https://es-fake-api.azurewebsites.net/api/auth/sign-up`
       const urlSignIn = `${process.env.NEXT_PUBLIC_BACKEND_HOST}/api/auth/sign-in`
 
       const formData = new FormData()
