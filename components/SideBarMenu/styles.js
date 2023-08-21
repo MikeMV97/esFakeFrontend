@@ -45,4 +45,8 @@ export const StyledSidebar = styled.aside`
   a:hover {
       cursor: pointer;
   }
+
+  .disabled {
+    pointer-events: none;
+  }
 `;

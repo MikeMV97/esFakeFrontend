@@ -13,12 +13,12 @@ export const SideBarMenu = () => {
             <li>Analizar noticia</li>
           </a>
         </Link>
-        <Link href="/my-analysis">
+        {/* <Link href="/my-analysis" d>
           <a>
             <Image src="/options.png" width={56} height={56} />
             <li>Mis analisis</li>
           </a>
-        </Link>
+        </Link> */}
         <Link href="/favorites">
           <a>
             <Image src="/favorites.png" width={56} height={56} />
