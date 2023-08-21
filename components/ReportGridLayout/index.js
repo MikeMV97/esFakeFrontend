@@ -37,7 +37,7 @@ export const ReportGridLayout = (props) => {
             <b>{props.data.numDiffWords}</b>
           </li>
           <li>
-            Número de palabras con alta información semántica: {" "}
+            Número de palabras con baja aportación de significado: {" "}
             <b>{props.data.numStopwords}</b>
           </li>
         </ul>
